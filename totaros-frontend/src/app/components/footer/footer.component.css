@@ -1,0 +1,80 @@
+.main-footer {
+  background-color: var(--surface-matte);
+  position: relative;
+  width: 100%;
+}
+
+/* Custom top accent frame layout ribbon (Green / White / Red) */
+.footer-top-ribbon {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right, 
+    var(--italian-green) 33.33%, 
+    var(--italian-white) 33.33% 66.66%, 
+    var(--italian-red) 66.66%
+  );
+}
+
+.footer-content {
+  padding: 40px 20px;
+}
+
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--italian-white);
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  color: var(--italian-red);
+}
+
+.footer-tagline {
+  color: #888888;
+  font-size: 0.9rem;
+  margin: 0 0 25px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Simple visual circle button badges wrapper */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--dark-charcoal);
+  border: 1px solid rgba(241, 242, 241, 0.05);
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  border-color: var(--italian-red);
+  color: var(--italian-white);
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  color: #555555;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(241, 242, 241, 0.03);
+  padding-top: 20px;
+  line-height: 1.5;
+}

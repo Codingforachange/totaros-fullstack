@@ -1,0 +1,83 @@
+<section id="reviews" class="reviews-section section-padding">
+  <div class="container">
+
+    <div class="text-center">
+      <p class="section-label">Street Feedback</p>
+      <h2>Customer Reviews</h2>
+      <div class="heading-accent"></div>
+      <p class="section-lead">Here is what the neighborhood is saying about Totaro's food truck.</p>
+    </div>
+
+    <!-- Active Feed Stream Layer Grid -->
+    <div *ngIf="isLoading" class="text-center state-message">
+      <p>Streaming active testimonials...</p>
+    </div>
+
+    <div *ngIf="!isLoading" class="reviews-grid">
+      <div *ngIf="customerReviews.length === 0" class="empty-reviews-card text-center">
+        <h3>No Reviews Posted Yet</h3>
+        <p>Be among the first to drop your feedback after hitting up our window!</p>
+      </div>
+
+      <div *ngFor="let review of customerReviews" class="review-card">
+        <div class="quote-icon">“</div>
+        <p class="review-text">{{ review.comment_text }}</p>
+        <div class="reviewer-meta-row">
+          <div class="reviewer-info">
+            <h4 class="reviewer-name">{{ review.customer_name }}</h4>
+            <span class="review-date">{{ review.created_at | date:'mediumDate' }}</span>
+          </div>
+          <div class="review-rating">★ 5.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         NEW ADDITION: LEAVE A REVIEW CONSOLE FORM
+         ========================================================================== -->
+    <div class="leave-review-container">
+      <div class="review-form-card">
+        <h3>Leave Us a Review</h3>
+        <p class="form-instructions">Had a great experience at our service window? Tell us how we did!</p>
+        
+        <div *ngIf="successMessage" class="review-success-alert">
+          {{ successMessage }}
+        </div>
+
+        <form (ngSubmit)="submitReview()" #reviewForm="ngForm">
+          <div class="review-input-block">
+            <label for="reviewAuthor">Your Name</label>
+            <input 
+              type="text" 
+              id="reviewAuthor" 
+              name="customer_name"
+              [(ngModel)]="newReview.reviewer_name" 
+              placeholder="e.g., Your Name Here" 
+              required>
+          </div>
+
+          <div class="review-input-block">
+            <label for="reviewBody">Your Feedback</label>
+            <textarea 
+              id="reviewBody" 
+              name="comment_text"
+              [(ngModel)]="newReview.review_text" 
+              rows="4" 
+              placeholder="What did you order? Let the neighborhood know how it tasted..." 
+              required></textarea>
+          </div>
+
+          <div class="text-right">
+            <button 
+              type="submit" 
+              class="btn-submit-review" 
+              [disabled]="!reviewForm.form.valid || isSubmitting">
+              {{ isSubmitting ? 'Submitting...' : 'Post Review' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>

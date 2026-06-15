@@ -1,0 +1,65 @@
+<section id="schedule" class="schedule-section section-padding">
+  <div class="container">
+
+    <div class="text-center">
+      <p class="section-label">Catch Us On The Road</p>
+      <h2>Truck Schedule & Live Map</h2>
+      <div class="heading-accent"></div>
+      <p class="section-lead">Find exactly where the truck is rolling up next or track our location live on the grid map.</p>
+    </div>
+
+    <!-- Dual Split Tracking Map Workspace Frame Grid -->
+    <div class="schedule-map-split-grid">
+      
+      <!-- Left Column: OpenStreetMap Live Track Frame Container -->
+      <div class="map-container-wrapper">
+        <iframe 
+          title="Live Food Truck GPS Tracker Map"
+          width="100%" 
+          height="100%" 
+          frameborder="0" 
+          scrolling="no" 
+          marginheight="0" 
+          marginwidth="0" 
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-80.5000%2C40.2000%2C-79.5000%2C41.0000&amp;layer=mapnik"
+          class="embedded-map-frame">
+        </iframe>
+        <div class="map-radar-glow-pills">
+          <span class="pulse-dot"></span>
+          <span class="pill-label">Live Tracking Activated</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Database Schedule List Streams -->
+      <div class="schedule-list-column">
+        <div *ngIf="isLoading" class="text-center state-message">
+          <p>Streaming route tracking coordinates...</p>
+        </div>
+
+        <div *ngIf="!isLoading">
+          <!-- Fallback Look if database tables return empty -->
+          <div *ngIf="upcomingStops.length === 0" class="empty-schedule-card text-center">
+            <h3>Updating Route Matrix</h3>
+            <p>We are currently cooking up our next round of stop coordinates. Check back shortly to track our next location!</p>
+          </div>
+
+          <!-- Live Dynamic Schedule List Card Rows -->
+          <div *ngFor="let stop of upcomingStops" class="schedule-card">
+            <div class="card-date-badge">
+              <span class="time-stamp">{{ stop.start_time | date:'shortTime' }}</span>
+            </div>
+            <div class="card-details-info">
+              <h3 class="location-title">{{ stop.location_name }}</h3>
+              <p class="location-address">{{ stop.address }}</p>
+            </div>
+            <div class="status-action">
+              <span class="live-status-pill">Confirmed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

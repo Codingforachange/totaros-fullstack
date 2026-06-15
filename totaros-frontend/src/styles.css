@@ -1,0 +1,57 @@
+/* Totaro's & Sons - Global Brand Palette & Typography Setup*/
+
+:root {
+/* Dynamic Bright Italian Flag Accents*/
+--italian-green: #009246;
+--italian-white: #f1f2f1;
+--italian-red: #ce2b37;
+
+/* Volcanic Theme Backdrops */
+--dark-charcoal: #121212;
+--surface-matte: #1c1c1c;
+
+/* Bold Accent Highlights */
+--fire-orange: #ff4500;
+--warm-gold: #ffb300;
+}
+/* Base Body Resets */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--dark-charcoal);
+    color: var(--italian-white);
+    overflow-x: hidden;
+}
+
+/* Global Reusable Layouy Utility Classes */
+.section-padding {
+    padding: 80px 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Bold Structural Typography Headings */
+h1, h2, h3, h4 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+/* Custom Italian Flag Three-Tone Gradient Accent Line */
+.heading-accent {
+    width: 140px;
+    height: 5px;
+    background: linear-gradient(to right, var(--italian-green) 36.3%, var(--italian-white) 30.3% 69.3%, var(--italian-red)63.3%);
+    margin: 12px auto 35px auto;
+    border-radius: 2px;
+}

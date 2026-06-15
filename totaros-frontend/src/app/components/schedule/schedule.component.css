@@ -1,0 +1,160 @@
+.schedule-section {
+  background-color: var(--dark-charcoal);
+  border-bottom: 1px solid rgba(241, 242, 241, 0.05);
+}
+
+.section-label {
+  color: var(--italian-green);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--italian-white);
+  margin-bottom: 0;
+}
+
+.section-lead {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* Master Dual Layout Split Grid Wrapper */
+.schedule-map-split-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .schedule-map-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Column - Live Embed Tracking Box Setup */
+.map-container-wrapper {
+  position: relative;
+  height: 450px;
+  background-color: var(--surface-matte);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 242, 241, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.embedded-map-frame {
+  border: none;
+  filter: grayscale(0.8) invert(0.9) contrast(1.2); /* Gives the map a slick custom dark mode appearance */
+}
+
+/* Radar ping indicator badge overlay */
+.map-radar-glow-pills {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(18, 18, 18, 0.85);
+  border: 1px solid rgba(0, 146, 70, 0.4);
+  backdrop-filter: blur(4px);
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ff7f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7);
+  animation: pulseRadar 1.6s infinite;
+}
+
+@keyframes pulseRadar {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 255, 127, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 127, 0); }
+}
+
+.pill-label {
+  color: var(--italian-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Right Column - Schedule List Items Stack */
+.schedule-list-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.empty-schedule-card {
+  background-color: var(--surface-matte);
+  border: 1px dashed rgba(241, 242, 241, 0.1);
+  padding: 40px 20px;
+  border-radius: 4px;
+}
+
+.empty-schedule-card h3 { color: var(--italian-white); margin-bottom: 5px; }
+.empty-schedule-card p { color: #666666; margin: 0; }
+
+.schedule-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  background-color: var(--surface-matte);
+  border-left: 4px solid var(--italian-green);
+  padding: 20px 25px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  gap: 15px;
+}
+
+@media (max-width: 450px) {
+  .schedule-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+.card-date-badge {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--italian-green);
+}
+
+.location-title {
+  font-size: 1.15rem;
+  color: var(--italian-white);
+  margin: 0 0 4px 0;
+}
+
+.location-address {
+  color: #999999;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.live-status-pill {
+  background-color: rgba(0, 146, 70, 0.08);
+  color: #00ff7f;
+  border: 1px solid rgba(0, 146, 70, 0.15);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}

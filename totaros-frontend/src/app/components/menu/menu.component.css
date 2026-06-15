@@ -1,0 +1,113 @@
+.menu-section {
+  background-color: var(--surface-matte);
+  border-bottom: 1px solid rgba(241, 242, 241, 0.05);
+}
+
+.section-label {
+  color: var(--italian-red);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--italian-white);
+  margin-bottom: 0;
+}
+
+.section-lead {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* Flex/Grid Control for Cards */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 400px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Card Styling */
+.menu-card {
+  background-color: var(--dark-charcoal);
+  border: 1px solid rgba(241, 242, 241, 0.04);
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--italian-green);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  font-size: 1.25rem;
+  color: var(--italian-white);
+  margin: 0;
+}
+
+.item-price {
+  background-color: rgba(0, 146, 70, 0.1);
+  color: #00ff7f;
+  font-weight: 800;
+  padding: 4px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 146, 70, 0.2);
+}
+
+.item-description {
+  color: #b3b3b3;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Label Pill Badges */
+.item-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-color: rgba(241, 242, 241, 0.03);
+  border: 1px solid rgba(241, 242, 241, 0.08);
+  color: #cccccc;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.menu-category-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--italian-white);
+    border-left: 3px solid var(--italian-red);
+    padding-left: 12px;
+    margin: 50px 0 25px 0;
+}

@@ -1,0 +1,62 @@
+<section id="booking" class="booking-section section-padding">
+  <div class="container max-width-form">
+
+    <div class="text-center">
+      <p class="section-label">Private Events</p>
+      <h2>Book Catering</h2>
+      <div class="heading-accent"></div>
+      <p class="section-lead">Want Totaro's & Sons at your next neighborhood block party, corporate event, or graduation bash? Drop your event details below to lock down your booking route dates.</p>
+    </div>
+
+    <!-- Interactive Contact Form Console Structure Wrapper -->
+    <div class="form-wrapper">
+      <form class="catering-form">
+        
+        <div class="form-grid-two-col">
+          <!-- Input Field Element: Full Name -->
+          <div class="input-block">
+            <label for="clientName">Your Name</label>
+            <input type="text" id="clientName" placeholder="Your Name" required>
+          </div>
+          
+          <!-- Input Field Element: Contact Email -->
+          <div class="input-block">
+            <label for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" placeholder="name@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-grid-two-col">
+          <!-- Input Field Element: Event Date Coordinates Selection -->
+          <div class="input-block">
+            <label for="eventDate">Target Event Date</label>
+            <input type="date" id="eventDate" required>
+          </div>
+          
+          <!-- Input Field Element: Expected Headcount Volume Matrix -->
+          <div class="input-block">
+            <label for="headcount">Estimated Guest Count</label>
+            <select id="headcount">
+              <option value="small">20 - 50 hungry guests</option>
+              <option value="medium">50 - 100 hungry guests</option>
+              <option value="large">100+ street-eat lovers</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Textarea input field tracking box for special message constraints -->
+        <div class="input-block">
+          <label for="eventNotes">Tell us about your event (Location, special requests, menu favorites)</label>
+          <textarea id="eventNotes" rows="5" placeholder="Let us know what you are celebrating and where we should park the truck..."></textarea>
+        </div>
+
+        <!-- Form Submission Interaction Triggers -->
+        <div class="text-center button-container">
+          <button type="submit" class="btn-submit-booking">Submit Catering Inquiry</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>

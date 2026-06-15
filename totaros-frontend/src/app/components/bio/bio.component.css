@@ -1,0 +1,128 @@
+.bio-section {
+  background-color: var(--dark-charcoal);
+  border-bottom: 1px solid rgba(241, 242, 241, 0.05);
+}
+
+
+/* Two-Column Layout Grid */
+.bio-three-way-grid {
+  display: grid;
+  grid-template-columns: repeate(3, 1fr);
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .bio-three-way-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.bio-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading-accent {
+  display: block;
+  margin: 12px auto 30px auto !important;
+  text-align: center;
+}
+
+.section-label, h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.section-label {
+  color: var(--italian-green);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--italian-white);
+  margin-bottom: 0;
+}
+
+.story-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+/* Right Side Showcase Card Styling */
+.bio-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase-card {
+  background-color: var(--surface-matte);
+  border-left: 4px solid var(--italian-green);
+  border-right: 4px solid var(--italian-red);
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+}
+
+.establishment-date {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: var(--italian-red);
+  color: var(--italian-white);
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.showcase-card h3 {
+  font-size: 1.4rem;
+  color: var(--italian-white);
+  margin-bottom: 15px;
+}
+
+.showcase-card p {
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+}
+
+/* Styling the item badges */
+.badge-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brand-badge {
+  background-color: rgba(241, 242, 241, 0.05);
+  border: 1px solid rgba(241, 242, 241, 0.1);
+  color: var(--italian-white);
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+}

@@ -1,0 +1,128 @@
+<div class="admin-container">
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <h2>Totaro & Sons</h2>
+      <span class="badge">Console</span>
+    </div>
+    <nav class="sidebar-menu">
+      <button class="menu-item" [class.active]="activeTab === 'reviews'" (click)="switchTab('reviews')">Review Moderation</button>
+      <button class="menu-item" [class.active]="activeTab === 'photos'" (click)="switchTab('photos')">Gallery Manager</button>
+      <button class="menu-item" [class.active]="activeTab === 'events'" (click)="switchTab('events')">Event Management</button>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    
+    <div *ngIf="activeTab === 'reviews'">
+      <header class="admin-header">
+        <h1>Review Moderation Queue</h1>
+        <p class="subtitle">Approve or remove customer reviews before they display on the public storefront.</p>
+      </header>
+
+      <div class="dashboard-card">
+        <div class="table-responsive">
+          <table class="moderation-table">
+            <thead>
+              <tr>
+                <th>Customer Name</th>
+                <th>Review Comment</th>
+                <th>Submission Date</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let review of reviews">
+                <td><strong>{{ review.name }}</strong></td>
+                <td><p class="review-text">"{{ review.comment }}"</p></td>
+                <td><span class="review-date">{{ review.date | date:'shortDate' }}</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn btn-approve" (click)="moderateReview(review.id, true)">Approve</button>
+                    <button class="btn btn-delete" (click)="moderateReview(review.id, false)">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngIf="reviews.length === 0">
+                <td colspan="4" class="text-center" style="color: #888;">No pending reviews awaiting moderation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'photos'">
+      <header class="admin-header">
+        <h1>Gallery Image Manager</h1>
+        <p class="subtitle">Upload new media asset records or prune out outdated photos from your application carousel stream.</p>
+      </header>
+
+      <div class="dashboard-card photo-upload-box">
+        <div class="upload-controls">
+          <input type="text" placeholder="Enter Photo URL link description..." class="url-input" [(ngModel)]="newPhoto.image_url" />
+          <input type="text" placeholder="Enter image alt caption description text..." class="caption-input" [(ngModel)]="newPhoto.caption" />
+          <button class="btn btn-approve" (click)="addPhotoAsset()">Add Photo Asset</button>
+        </div>
+      </div>
+
+      <h3 class="section-title">Active Photo Assets</h3>
+      <div class="photo-grid">
+        <div class="photo-card" *ngFor="let photo of photos">
+          <img [src]="photo.image_url" [alt]="photo.caption" />
+          <div class="photo-actions">
+            <button class="btn btn-delete btn-sm" (click)="removePhotoAsset(photo.id)">Remove Image</button>
+          </div>
+        </div>
+        <p *ngIf="photos.length === 0" style="color: #888;">No photos currently uploaded in the gallery database.</p>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'events'">
+      <header class="admin-header">
+        <h1>Event Management</h1>
+        <p class="subtitle">Schedule and update your food truck's upcoming locations, public pop-ups, and private catering events.</p>
+      </header>
+
+      <div class="dashboard-card photo-upload-box">
+        <div class="upload-controls">
+          <input type="text" placeholder="Event Title (e.g., Arnold Community Days Pop-Up)..." class="url-input" style="min-width: 250px;" [(ngModel)]="newEvent.title" />
+          <input type="text" placeholder="Location Address..." class="caption-input" [(ngModel)]="newEvent.location" />
+          <input type="date" class="url-input" style="max-width: 180px;" [(ngModel)]="newEvent.event_date" />
+          <button class="btn btn-approve" (click)="scheduleEvent()">Schedule Event</button>
+        </div>
+      </div>
+
+      <h3 class="section-title">Scheduled Food Truck Appearances</h3>
+      <div class="dashboard-card">
+        <div class="table-responsive">
+          <table class="moderation-table">
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Location / Venue</th>
+                <th>Scheduled Date</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of events">
+                <td><strong class="customer-name">{{ event.title }}</strong></td>
+                <td><p class="review-text">{{ event.location }}</p></td>
+                <td><span class="review-date">{{ event.event_date }}</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn btn-delete" (click)="cancelEvent(event.id)">Cancel Event</button>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngIf="events.length === 0">
+                <td colspan="4" class="text-center" style="color: #888;">No food truck appearances scheduled yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

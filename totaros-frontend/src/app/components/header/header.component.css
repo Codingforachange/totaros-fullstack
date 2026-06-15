@@ -1,0 +1,83 @@
+/* Sticky Navigation wrapper */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface-matte);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Bold Branding Typography */
+.brand-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--italian-white);
+    text-transform: uppercase;
+}
+
+.brand-log span {
+    color: var(--italian-red);
+}
+
+/* Menu Link Navigation Items */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    color: var(--italian-white);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--italian-green);
+}
+
+/* Bold Red Booking Call-To-Action Button */
+.nav-link-btn {
+    background-color: var(--italian-red);
+    color: var(--italian-white);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.nav-link-btn:hover {
+    background-color: #b02029;
+    transform: scale(1.05);
+}
+
+/* Structural Italian Flag Accent Ribbon (Green / White / Red) */
+.color-ribbon {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        var(--italian-green) 33.33%,
+        var(--italian-white) 33.33% 66.66%,
+        var(--italian-red) 66.66%
+    );
+}

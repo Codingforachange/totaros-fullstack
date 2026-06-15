@@ -1,0 +1,46 @@
+<div class="admin-login-viewport">
+  <div class="login-card-frame">
+    <div class="text-center">
+      <span class="brand-sub">Totaro's & Sons</span>
+      <h2>Management Console</h2>
+      <div class="heading-accent" style="margin: 10px auto 25px auto;"></div>
+    </div>
+
+    <div *ngIf="errorMessage" class="auth-error-banner">
+      {{ errorMessage }}
+    </div>
+
+    <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+      <div class="form-input-group">
+        <label for="adminUser">System Username</label>
+        <input 
+          type="text" 
+          id="adminUser" 
+          name="username" 
+          [(ngModel)]="credentials.username" 
+          placeholder="Enter admin username..." 
+          required
+          autocomplete="username">
+      </div>
+
+      <div class="form-input-group" style="margin-bottom: 30px;">
+        <label for="adminPass">Secure Password</label>
+        <input 
+          type="password" 
+          id="adminPass" 
+          name="password" 
+          [(ngModel)]="credentials.password" 
+          placeholder="Enter account security key..." 
+          required
+          autocomplete="current-password">
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn-admin-login" 
+        [disabled]="!loginForm.form.valid || isProcessing">
+        {{ isProcessing ? 'Verifying Hashes...' : 'Authorize Access' }}
+      </button>
+    </form>
+  </div>
+</div>
