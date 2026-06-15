@@ -7,6 +7,11 @@ from sqlalchemy.orm import sessionmaker
 # Fallback to a local PostgreSQL connection string for development.
 DATABASE_URL = os.getenv("DATABASE_URL","postgresql://postgres:haley413@localhost:5432/totaros_db")
 
+print(f"---PRODUCTION DATABASE TARGET: {DATABASE_URL.split('@')[-1] if '@' in DATABASE_URL else DATABASE_URL} ---")
+
+if not DATABASE_URL:
+    DATABASE_URL ="postgresql://totaro_admin:E1P8jXS2HwNJd9kEhCLxh7MMwiknqHdE@dpg-d8o4efk8aovs73fg7isg-a.ohio-postgres.render.com/totaros_db"
+
 # Render database URLs sometimes start with 'postgres://',
 # but SQLAlchemy 1.4+ strictly requires "postgres://". This fix prevents crashes on deployed.
 if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
