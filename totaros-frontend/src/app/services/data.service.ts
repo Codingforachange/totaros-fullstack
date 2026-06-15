@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = 'http://totaros-backend-api.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class DataService {
   }
 
   getPhotos(): Observable<any[]> {
-    return this.http.get<any[]>('http://127.0.0.1:8000/api/photos');
+    return this.http.get<any[]>(`${this.apiUrl}/photos`);
   }
 
   getReviews(): Observable<any[]> {
