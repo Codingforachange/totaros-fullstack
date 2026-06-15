@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 #1 Grab the database URL from Render's enviroment variables.
 # Fallback to a local PostgreSQL connection string for development.
-DATABASE_URL = os.getenv("DATABASE_URL","postgresql://postgres:haley413@localhost:5432/totaros_db")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 print(f"---PRODUCTION DATABASE TARGET: {DATABASE_URL.split('@')[-1] if '@' in DATABASE_URL else DATABASE_URL} ---")
 
