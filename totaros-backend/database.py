@@ -5,10 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 #1 Grab the database URL from Render's enviroment variables.
 # Fallback to a local PostgreSQL connection string for development.
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://postgres:haley413@localhost:5432/totaros_db"
-)
+DATABASE_URL = os.getenv("DATABASE_URL","postgresql://postgres:haley413@localhost:5432/totaros_db")
 
 # Render database URLs sometimes start with 'postgres://',
 # but SQLAlchemy 1.4+ strictly requires "postgres://". This fix prevents crashes on deployed.
