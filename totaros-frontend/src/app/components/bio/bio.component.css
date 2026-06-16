@@ -22,6 +22,55 @@
   }
 }
 
+@media (max-width: 768px) {
+  /* 1. Ensure the overall section doesn't allow layout leaks */
+  .bio-section {
+    overflow: hidden;
+    padding: 40px 15px; /* Adds safe padding on mobile edges */
+  }
+
+  /* 2. Tighten up the grid spacing */
+  .bio-three-way-grid {
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* 3. Keep the photo container safely scaled to the screen width */
+  .bio-photo-center {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .frame-border-wrapper {
+    width: 100%;
+    max-width: 320px; /* Limits size on small phones */
+    margin: 0 auto;
+  }
+
+  /* 4. Force the actual image asset to scale down nicely */
+  .family-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* 5. Clean up structural cards and text paths */
+  .showcase-card {
+    padding: 24px 16px;
+    width: 100%;
+  }
+  
+  .story-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+
 .bio-text {
   display: flex;
   flex-direction: column;
