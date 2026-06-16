@@ -78,3 +78,25 @@
   padding-top: 20px;
   line-height: 1.5;
 }
+
+@media (max-width: 768px) {
+  /* Prevent any rogue layout leaks from the footer container */
+  .main-footer {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* Force the tagline to wrap cleanly and give it breathing room on small screens */
+  .footer-tagline {
+    max-width: 280px;
+    margin: 0 auto 20px auto !important; /* Centers it and overrides the desktop bottom margin */
+    line-height: 1.5;
+    font-size: 0.85rem; /* Slightly balances size on narrow viewports */
+  }
+  
+  /* Give the copyright text a slight cushion on mobile edges */
+  .footer-copyright {
+    padding: 20px 10px;
+    font-size: 0.75rem;
+  }
+}
