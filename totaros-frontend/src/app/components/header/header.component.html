@@ -5,8 +5,15 @@
             Totaro's <span>& Sons</span>
          </div>
 
+         <!-- Hamburger Menu Button (Only shows on mobile) -->
+          <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
          <!-- Navigation Menu Links -->
-          <nav class="nav-menu">
+          <nav class="nav-menu" [class.is-active]="isMenuOpen">
             <a href="#photos" class="nav-link">Photos</a>
             <a href="#bio" class="nav-link">Our Story</a>
             <a href="#menu" class="nav-link">The Menu</a>
