@@ -81,3 +81,32 @@
         var(--italian-red) 66.66%
     );
 }
+
+/* Mobile Responsive Styling for Header Section */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stacks the logo on top of the menu */
+    gap: 15px; /* Adds clean spacing between logo and menu */
+    padding: 15px 10px; /* Tightens padding on small screens */
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-direction: column; /* Stacks the navigation links vertically */
+    width: 100%;
+    gap: 12px; /* Closes the gap slightly for tight spaces */
+  }
+
+  .nav-link {
+    font-size: 1.1rem; /* Slightly increases size for easy finger taps */
+    padding: 6px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .nav-link-btn {
+    width: 100%; /* Makes the "Sign Up" button fill out full width */
+    max-width: 250px; /* Keeps it from looking stretched out on wider phones */
+    margin: 5px auto 0 auto; /* Centers the button in the menu stack */
+  }
+}
