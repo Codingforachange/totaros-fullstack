@@ -84,6 +84,7 @@
 
 /* Mobile Responsive Styling for Header Section */
 @media (max-width: 768px) {
+
   .header-container {
     flex-direction: column; /* Stacks the logo on top of the menu */
     gap: 15px; /* Adds clean spacing between logo and menu */
@@ -91,15 +92,25 @@
     text-align: center;
   }
 
+  .main-header {
+    position: absolute;
+  }
+
   .nav-menu {
+    display: none;
     flex-direction: column; /* Stacks the navigation links vertically */
     width: 100%;
     gap: 12px; /* Closes the gap slightly for tight spaces */
+    padding: 10px 0;
+  }
+
+  .nav-menu.is-active {
+    display: flex;
   }
 
   .nav-link {
     font-size: 1.1rem; /* Slightly increases size for easy finger taps */
-    padding: 6px 0;
+    padding: 8px 0;
     display: block;
     width: 100%;
   }

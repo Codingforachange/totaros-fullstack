@@ -14,12 +14,12 @@
 
          <!-- Navigation Menu Links -->
           <nav class="nav-menu" [class.is-active]="isMenuOpen">
-            <a href="#photos" class="nav-link">Photos</a>
-            <a href="#bio" class="nav-link">Our Story</a>
-            <a href="#menu" class="nav-link">The Menu</a>
-            <a href="#schedule" class="nav-link">Find The Truck</a>
-            <a href="#reviews" class="nav-link">Reviews</a>
-            <a href="#booking" class="nav-link">Book Catering</a>
+            <a href="#photos" class="nav-link" (click)="isMenuOpen = false">Photos</a>
+            <a href="#bio" class="nav-link" (click)="isMenuOpen = false">Our Story</a>
+            <a href="#menu" class="nav-link" (click)="isMenuOpen = false">The Menu</a>
+            <a href="#schedule" class="nav-link" (click)="isMenuOpen = false">Find The Truck</a>
+            <a href="#reviews" class="nav-link" (click)="isMenuOpen = false">Reviews</a>
+            <a href="#booking" class="nav-link" (click)="isMenuOpen = false">Book Catering</a>
           </nav>
     </div>
     <!-- Bold Italian Flag Identity Ribbon -->
