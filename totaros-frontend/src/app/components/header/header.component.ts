@@ -12,4 +12,9 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  navigateToSection(): void {
+    setTimeout(() => {
+      this.isMenuOpen = false;
+    }, 150);
+  }
 }
