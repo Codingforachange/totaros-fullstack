@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   // Points directly to the live PostgreSQL login pipeline route inside main.py
-  private authUrl = 'http://127.0.0.1:8000/api/auth/login';
+  private authUrl = 'http://totaros-backend.onrender.com/api/auth/login';
 
   constructor(private http: HttpClient, private router: Router) {}
 

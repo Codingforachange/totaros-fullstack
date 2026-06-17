@@ -20,7 +20,7 @@ export class AdminDashboardComponent implements OnInit {
   newPhoto = { image_url: '', caption: '' };
   newEvent = { title: '', location: '', event_date: '' };
 
-  private backendUrl = 'http://127.0.0.1:8000/api/admin';
+  private backendUrl = 'http://totaros-backend.onrender.com/api/admin';
 
   constructor(private http: HttpClient) {}
 
@@ -82,7 +82,7 @@ export class AdminDashboardComponent implements OnInit {
   // PHOTO HANDLERS
   // ==========================================
   fetchPhotos(): void {
-    this.http.get<any[]>('http://127.0.0.1:8000/api/photos').subscribe({
+    this.http.get<any[]>(`${this.backendUrl.replace('/admin', '')}/photos`).subscribe({
       next: (data) => this.photos = data,
       error: (err) => console.error('Error fetching photos:', err)
     });
@@ -110,7 +110,7 @@ export class AdminDashboardComponent implements OnInit {
   // EVENT HANDLERS
   // ==========================================
   fetchEvents(): void {
-    this.http.get<any[]>('http://127.0.0.1:8000/api/events').subscribe({
+    this.http.get<any[]>(`${this.backendUrl.replace('/admin', '')}/events`).subscribe({
       next: (data) => this.events = data,
       error: (err) => console.error('Error fetching events:', err)
     });
